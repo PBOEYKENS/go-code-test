@@ -6,7 +6,6 @@ import (
 	"github.com/gin-gonic/gin"
 	"github.com/soltix-dev/go-code-test/core/api/route"
 	"github.com/soltix-dev/go-code-test/core/bootstrap"
-	"github.com/soltix-dev/go-code-test/core/logger"
 )
 
 func main() {
@@ -14,8 +13,6 @@ func main() {
 	app := bootstrap.App()
 
 	env := app.Env
-
-	logger.Init()
 
 	defer app.CloseDBConnection()
 

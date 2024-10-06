@@ -18,6 +18,4 @@ func Setup(env *bootstrap.Env, timeout time.Duration, db *gorm.DB, ethClient *et
 	publicRouter := gin.Group("")
 	// Collection router
 	collection.NewGetExplorePageDataRouter(env, timeout, db, publicRouter)
-	collection.NewGetCategoryPageDataRouter(env, timeout, db, publicRouter)
-	collection.NewGetCollectionHeavyRouter(env, timeout, db, publicRouter)
 }
