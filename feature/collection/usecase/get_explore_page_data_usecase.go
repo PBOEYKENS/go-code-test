@@ -29,8 +29,7 @@ func (getExplorePageData *getExplorePageDataUsecase) GetExplorePageData(
 	c context.Context,
 	domainAddress string,
 ) (
-	[]collectionDomain.CategoryDataModel,
-	[]collectionDomain.TopicDataModel,
+	[]collectionDomain.ItemDataModel,
 	error,
 ) {
 	ctx, cancel := context.WithTimeout(c, getExplorePageData.contextTimeout)

@@ -16,7 +16,7 @@ type GetExplorePageController struct {
 }
 
 func (getExplorePageController *GetExplorePageController) GetExplorePageData(c *gin.Context) {
-	categories, topics, err := getExplorePageController.GetExplorePageUsecase.GetExplorePageData(
+	items, err := getExplorePageController.GetExplorePageUsecase.GetExplorePageData(
 		c,
 		getExplorePageController.Env.DomainAddress,
 	)
@@ -27,8 +27,7 @@ func (getExplorePageController *GetExplorePageController) GetExplorePageData(c *
 	}
 
 	getExplorePageResponse := collectionDomain.GetExplorePageDataResponse{
-		Categories: categories,
-		Topics:     topics,
+		Items: items,
 	}
 
 	c.JSON(http.StatusOK, getExplorePageResponse)

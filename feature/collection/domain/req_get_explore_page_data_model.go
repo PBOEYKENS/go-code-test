@@ -3,10 +3,9 @@ package domain
 import "context"
 
 type GetExplorePageDataResponse struct {
-	Categories []CategoryDataModel `json:"categories"`
-	Topics     []TopicDataModel    `json:"topics"`
+	Items []ItemDataModel `json:"item"`
 }
 
 type GetExplorePageDataUsecase interface {
-	GetExplorePageData(c context.Context, domainAddress string) ([]CategoryDataModel, []TopicDataModel, error)
+	GetExplorePageData(c context.Context, domainAddress string) ([]ItemDataModel, error)
 }
