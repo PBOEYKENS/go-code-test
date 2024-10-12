@@ -8,4 +8,5 @@ type GetExplorePageDataResponse struct {
 
 type GetExplorePageDataUsecase interface {
 	GetExplorePageData(c context.Context, domainAddress string) ([]ItemDataModel, error)
+	GetSingleItemData(c context.Context, domainAddress string, itemName string) ([]ItemDataModel, error)
 }

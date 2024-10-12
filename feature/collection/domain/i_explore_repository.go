@@ -18,4 +18,10 @@ type ExplorerRepository interface {
 		c context.Context,
 		domainAddress string,
 	) ([]ItemDataModel, error)
+
+	GetSingleItemData(
+		c context.Context,
+		domainAddress string,
+		itemName string,
+	) ([]ItemDataModel, error)
 }

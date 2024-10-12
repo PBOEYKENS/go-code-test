@@ -37,3 +37,17 @@ func (getExplorePageData *getExplorePageDataUsecase) GetExplorePageData(
 
 	return getExplorePageData.exploreRepository.GetExplorePageData(ctx, domainAddress)
 }
+
+func (getSingleItemData *getExplorePageDataUsecase) GetSingleItemData(
+	c context.Context,
+	domainAddress string,
+	itemName string,
+) (
+	[]collectionDomain.ItemDataModel,
+	error,
+) {
+	ctx, cancel := context.WithTimeout(c, getSingleItemData.contextTimeout)
+	defer cancel()
+
+	return getSingleItemData.exploreRepository.GetSingleItemData(ctx, domainAddress, itemName)
+}
